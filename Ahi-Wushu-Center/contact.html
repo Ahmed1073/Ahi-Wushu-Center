@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahi Wushu Center - Contact Us</title>
+    <!-- Font Awesome for icons (e.g., social media, phone, email) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Basic Reset & Global Styles (Copied from style.css for self-containment) */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap");
+
+      :root {
+        --primary-color: #aa3939; /* Deep Red - Represents strength, passion */
+        --secondary-color: #cca818; /* Gold/Amber - Represents excellence, tradition */
+        --accent-color: #1a5276; /* Dark Blue - Represents discipline, focus */
+        --text-dark: #333;
+        --text-light: #f4f4f4;
+        --bg-light: #ffffff;
+        --bg-dark: #f0f0f0;
+        --border-color: #ddd;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Roboto", sans-serif;
+        --container-width: 1200px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+      }
+
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--accent-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-heading);
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      .section-padding {
+        padding: 60px 0;
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+      }
+
+      .btn-primary:hover {
+        background-color: #8c2e2e;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: var(--accent-color);
+        color: var(--text-light);
+      }
+
+      .btn-secondary:hover {
+        background-color: #143a52;
+        transform: translateY(-2px);
+      }
+
+      /* Header */
+      .main-header {
+        background-color: var(--bg-light);
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%; /* If you want a circular logo frame */
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .main-nav .nav-list {
+        display: flex;
+      }
+
+      .main-nav .nav-list li {
+        margin-left: 30px;
+      }
+
+      .main-nav .nav-list a {
+        color: var(--text-dark);
+        font-weight: 600;
+        padding: 5px 0;
+        position: relative;
+      }
+
+      .main-nav .nav-list a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background-color: var(--primary-color);
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s ease;
+      }
+
+      .main-nav .nav-list a:hover::after,
+      .main-nav .nav-list a.active::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--accent-color);
+      }
+
+      /* Footer */
+      .main-footer {
+        background-color: var(--accent-color);
+        color: var(--text-light);
+        padding: 40px 0 20px;
+        font-size: 0.95rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-col h3 {
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      .footer-col p {
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-col ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .social-links {
+        margin-top: 15px;
+      }
+
+      .social-links a {
+        color: var(--text-light);
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Page Hero for internal pages */
+      .page-hero {
+        position: relative;
+        height: 40vh; /* Shorter than homepage hero */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        text-align: center;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .page-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Dark overlay for text readability */
+        z-index: -1;
+      }
+
+      .page-hero-content {
+        z-index: 1;
+        padding: 0 20px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .page-hero-content p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Specific hero backgrounds */
+      .page-hero.contact-hero {
+        background-image: url("https://placehold.co/1920x400/CCA818/333333?text=Contact+Page+Background"); /* Replace with your image */
+      }
+
+      /* Specific styles for Contact Us page */
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .contact-item {
+        background-color: var(--bg-dark);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        flex: 1 1 300px; /* Allows items to grow/shrink, min width 300px */
+        max-width: 350px;
+      }
+
+      .contact-item i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .contact-item h3 {
+        color: var(--accent-color);
+        margin-bottom: 10px;
+      }
+
+      .contact-form-section {
+        background-color: var(--bg-light);
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .contact-form-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(170, 57, 57, 0.2);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-form-section .btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-top: 10px;
+      }
+
+      .map-section {
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .map-section h2 {
+        margin-bottom: 30px;
+        color: var(--accent-color);
+      }
+
+      .map-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Animations */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in-section.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .main-nav .nav-list {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: var(--bg-light);
+          position: absolute;
+          top: 80px; /* Adjust based on header height */
+          left: 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          padding: 20px 0;
+          border-top: 1px solid var(--border-color);
+        }
+
+        .main-nav .nav-list.active {
+          display: flex;
+        }
+
+        .main-nav .nav-list li {
+          margin: 10px 20px;
+          text-align: center;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .page-hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .page-hero-content p {
+          font-size: 1rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-col {
+          margin-bottom: 20px;
+        }
+
+        .social-links {
+          justify-content: center;
+          display: flex; /* To center social icons */
+        }
+
+        .contact-info {
+          flex-direction: column;
+          align-items: center;
+        }
+        .contact-item {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .page-hero-content p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section - Consistent across all pages -->
+    <header class="main-header">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="images/logo.png"
+            alt="Ahi Wushu Center Logo"
+            onerror="this.onerror=null;this.src='https://placehold.co/50x50/CCA818/333333?text=Logo';"
+          />
+          <span>Ahi Wushu Center</span>
+        </a>
+        <nav class="main-nav">
+          <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero contact-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content container">
+          <h1>Get in Touch</h1>
+          <p>
+            We'd love to hear from you. Reach out with any questions or
+            inquiries.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-details section-padding fade-in-section">
+        <div class="container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Our Location</h3>
+              <p>[Your Street Address], [Your City/Region]</p>
+              <p>[Your Country], [Postal Code]</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+251912345678">+251 912 345 678</a></p>
+              <p><a href="tel:+251112345678">+251 112 345 678</a></p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <h3>Email Address</h3>
+              <p>
+                <a href="mailto:info@ahiwushucenter.com"
+                  >info@ahiwushucenter.com</a
+                >
+              </p>
+              <p>
+                <a href="mailto:support@ahiwushucenter.com"
+                  >support@ahiwushucenter.com</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <!-- IMPORTANT: For a functional contact form, you will need a backend service.
+                         This form is set up to work with services like Formspree.io or Netlify Forms.
+                         Replace "YOUR_FORMSPREE_EMAIL" with your actual Formspree endpoint. -->
+            <form
+              action="https://formspree.io/f/YOUR_FORMSPREE_EMAIL"
+              method="POST"
+            >
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="_replyto" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="map-section fade-in-section">
+            <h2>Find Us on the Map</h2>
+            <div class="map-container">
+              <!-- Replace with your actual Google Maps embed code -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.718872935293!2d38.763612!3d9.014561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f2a1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1678901234567!5m2!1sen!2set"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section - Consistent across all pages -->
+    <footer class="main-footer">
+      <div class="container footer-content">
+        <div class="footer-col">
+          <h3>Ahi Wushu Center</h3>
+          <p>Dedicated to excellence in Wushu.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Ahi Wushu Center. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Basic JavaScript for hamburger menu and scroll animations (copied from script.js)
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Navigation (Hamburger Menu) ---
+        const hamburger = document.getElementById("hamburger");
+        const navList = document.getElementById("navList");
+
+        if (hamburger && navList) {
+          hamburger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            hamburger.querySelector("i").classList.toggle("fa-bars");
+            hamburger.querySelector("i").classList.toggle("fa-times"); // Change icon to 'X'
+          });
+
+          // Close nav when a link is clicked (for mobile)
+          navList.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth <= 992) {
+                // Only close on smaller screens
+                navList.classList.remove("active");
+                hamburger.querySelector("i").classList.remove("fa-times");
+                hamburger.querySelector("i").classList.add("fa-bars");
+              }
+            });
+          });
+        }
+
+        // --- Active Nav Link Highlighting ---
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".main-nav .nav-list a");
+
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href");
+          if (
+            linkPath === currentPath ||
+            (currentPath === "" && linkPath === "index.html")
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+
+        // --- Add subtle scroll animations (Example) ---
+        const sections = document.querySelectorAll("section");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.2, // Trigger when 20% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-in");
+              observer.unobserve(entry.target); // Stop observing once animated
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          section.classList.add("fade-in-section"); // Add base class for animation
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>

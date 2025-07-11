@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahi Wushu Center - About Us</title>
+    <!-- Font Awesome for icons (e.g., social media) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Basic Reset & Global Styles (Copied from style.css for self-containment) */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap");
+
+      :root {
+        --primary-color: #aa3939; /* Deep Red - Represents strength, passion */
+        --secondary-color: #cca818; /* Gold/Amber - Represents excellence, tradition */
+        --accent-color: #1a5276; /* Dark Blue - Represents discipline, focus */
+        --text-dark: #333;
+        --text-light: #f4f4f4;
+        --bg-light: #ffffff;
+        --bg-dark: #f0f0f0;
+        --border-color: #ddd;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Roboto", sans-serif;
+        --container-width: 1200px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+      }
+
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--accent-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-heading);
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      .section-padding {
+        padding: 60px 0;
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+      }
+
+      .btn-primary:hover {
+        background-color: #8c2e2e;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: var(--accent-color);
+        color: var(--text-light);
+      }
+
+      .btn-secondary:hover {
+        background-color: #143a52;
+        transform: translateY(-2px);
+      }
+
+      /* Header */
+      .main-header {
+        background-color: var(--bg-light);
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%; /* If you want a circular logo frame */
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .main-nav .nav-list {
+        display: flex;
+      }
+
+      .main-nav .nav-list li {
+        margin-left: 30px;
+      }
+
+      .main-nav .nav-list a {
+        color: var(--text-dark);
+        font-weight: 600;
+        padding: 5px 0;
+        position: relative;
+      }
+
+      .main-nav .nav-list a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background-color: var(--primary-color);
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s ease;
+      }
+
+      .main-nav .nav-list a:hover::after,
+      .main-nav .nav-list a.active::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--accent-color);
+      }
+
+      /* Footer */
+      .main-footer {
+        background-color: var(--accent-color);
+        color: var(--text-light);
+        padding: 40px 0 20px;
+        font-size: 0.95rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-col h3 {
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      .footer-col p {
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-col ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .social-links {
+        margin-top: 15px;
+      }
+
+      .social-links a {
+        color: var(--text-light);
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Page Hero for internal pages */
+      .page-hero {
+        position: relative;
+        height: 40vh; /* Shorter than homepage hero */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        text-align: center;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .page-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Dark overlay for text readability */
+        z-index: -1;
+      }
+
+      .page-hero-content {
+        z-index: 1;
+        padding: 0 20px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .page-hero-content p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Specific hero backgrounds */
+      .page-hero.about-hero {
+        background-image: url("https://placehold.co/1920x400/AA3939/ffffff?text=About+Page+Background"); /* Replace with your image */
+      }
+
+      /* Content block styling for About page */
+      .content-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 40px;
+        gap: 30px;
+      }
+
+      .content-block.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .content-block img.content-image {
+        width: 40%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+      }
+
+      .content-block p {
+        flex: 1;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #555;
+      }
+
+      .content-block h3 {
+        color: var(--accent-color);
+        margin-bottom: 15px;
+      }
+
+      /* Values Grid on About page */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .value-item {
+        background-color: var(--bg-light);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .value-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .value-item .icon-large {
+        font-size: 3.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .value-item h3 {
+        color: var(--accent-color);
+        margin-bottom: 10px;
+      }
+
+      /* Animations */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in-section.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .main-nav .nav-list {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: var(--bg-light);
+          position: absolute;
+          top: 80px; /* Adjust based on header height */
+          left: 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          padding: 20px 0;
+          border-top: 1px solid var(--border-color);
+        }
+
+        .main-nav .nav-list.active {
+          display: flex;
+        }
+
+        .main-nav .nav-list li {
+          margin: 10px 20px;
+          text-align: center;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .page-hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .page-hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-col {
+          margin-bottom: 20px;
+        }
+
+        .social-links {
+          justify-content: center;
+          display: flex; /* To center social icons */
+        }
+
+        /* Responsive adjustments for content blocks */
+        .content-block,
+        .content-block.reverse {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .content-block img.content-image {
+          width: 80%; /* Make image larger on small screens */
+          margin-bottom: 20px;
+        }
+
+        .content-block p {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .page-hero-content p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+
+        .content-block img.content-image {
+          width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section - Consistent across all pages -->
+    <header class="main-header">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="images/logo.png"
+            alt="Ahi Wushu Center Logo"
+            onerror="this.onerror=null;this.src='https://placehold.co/50x50/CCA818/333333?text=Logo';"
+          />
+          <span>Ahi Wushu Center</span>
+        </a>
+        <nav class="main-nav">
+          <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero about-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content container">
+          <h1>About Ahi Wushu Center</h1>
+          <p>Our journey, our mission, and the spirit of Wushu.</p>
+        </div>
+      </section>
+
+      <section class="about-wushu section-padding fade-in-section">
+        <div class="container">
+          <h2>The Art of Wushu</h2>
+          <div class="content-block">
+            <img
+              src="https://placehold.co/400x250/AA3939/ffffff?text=Wushu+History"
+              alt="Wushu History"
+              class="content-image right"
+            />
+            <p>
+              Wushu, often known as Kung Fu, is a comprehensive term for all
+              Chinese martial arts. It encompasses a vast array of fighting
+              styles, traditional forms, and modern competitive sports. More
+              than just a physical discipline, Wushu is a rich cultural heritage
+              that integrates philosophy, ethics, and aesthetics.
+            </p>
+            <p>
+              Its origins trace back thousands of years, evolving from ancient
+              self-defense techniques, hunting methods, and military training.
+              Over centuries, it developed into diverse styles, each with unique
+              characteristics, movements, and weapon applications. Wushu
+              emphasizes not only physical prowess but also mental fortitude,
+              discipline, and respect.
+            </p>
+          </div>
+          <div class="content-block reverse">
+            <img
+              src="https://placehold.co/400x250/1A5276/ffffff?text=Wushu+Forms"
+              alt="Wushu Forms"
+              class="content-image left"
+            />
+            <p>
+              Modern Wushu is divided into two main categories: Taolu (forms)
+              and Sanda (sparring). Taolu involves choreographed routines of
+              martial arts movements, often performed with weapons like swords,
+              spears, or staffs, judged on aesthetics, difficulty, and
+              precision. Sanda is a full-contact combat sport, combining
+              striking, kicking, and grappling techniques.
+            </p>
+            <p>
+              At its core, Wushu promotes health, self-defense, character
+              building, and cultural understanding. It is a journey of
+              continuous self-improvement, fostering balance, agility, strength,
+              and inner peace.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-story section-padding bg-light-gray fade-in-section">
+        <div class="container">
+          <h2>Our Story: The Ahi Wushu Center</h2>
+          <div class="content-block">
+            <img
+              src="https://placehold.co/400x250/CCA818/333333?text=Ahi+Center"
+              alt="Ahi Wushu Center"
+              class="content-image left"
+            />
+            <p>
+              Founded in [Year], Ahi Wushu Center was established with a
+              singular vision: to create a premier training ground for Wushu
+              enthusiasts of all ages and skill levels. Our founders, [Founder
+              Names/Background], envisioned a place where the ancient traditions
+              of Wushu could flourish alongside modern training methodologies.
+            </p>
+            <p>
+              We believe that Wushu is more than just martial arts; it's a way
+              of life. Our center is built on the principles of discipline,
+              respect, perseverance, and community. We strive to empower our
+              students not only with physical skills but also with the mental
+              resilience and character necessary to succeed in all aspects of
+              life.
+            </p>
+          </div>
+          <div class="content-block reverse">
+            <img
+              src="https://placehold.co/400x250/AA3939/ffffff?text=Our+Instructors"
+              alt="Our Instructors"
+              class="content-image right"
+            />
+            <h3>Our Instructors</h3>
+            <p>
+              Our team of highly experienced and certified instructors are
+              passionate about Wushu and dedicated to guiding each student on
+              their martial arts journey. With years of training and competition
+              experience, they bring a wealth of knowledge and a nurturing
+              approach to every class. They are committed to providing
+              personalized attention, ensuring that each student develops at
+              their own pace while mastering fundamental techniques and advanced
+              forms.
+            </p>
+            <p>
+              Meet our lead instructors: [Instructor Name 1], [Instructor Name
+              2], and [Instructor Name 3].
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-mission section-padding fade-in-section">
+        <div class="container text-center">
+          <h2>Our Mission & Values</h2>
+          <div class="values-grid">
+            <div class="value-item">
+              <i class="fas fa-hand-fist icon-large"></i>
+              <h3>Discipline</h3>
+              <p>
+                Fostering self-control, focus, and dedication in every aspect of
+                training and life.
+              </p>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-users icon-large"></i>
+              <h3>Community</h3>
+              <p>
+                Building a supportive and respectful environment where everyone
+                feels welcome.
+              </p>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-medal icon-large"></i>
+              <h3>Excellence</h3>
+              <p>
+                Striving for continuous improvement and mastery in Wushu
+                techniques and character.
+              </p>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-heart icon-large"></i>
+              <h3>Integrity</h3>
+              <p>Upholding honesty, moral principles, and ethical conduct.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section - Consistent across all pages -->
+    <footer class="main-footer">
+      <div class="container footer-content">
+        <div class="footer-col">
+          <h3>Ahi Wushu Center</h3>
+          <p>Dedicated to excellence in Wushu.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Ahi Wushu Center. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Basic JavaScript for hamburger menu and scroll animations (copied from script.js)
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Navigation (Hamburger Menu) ---
+        const hamburger = document.getElementById("hamburger");
+        const navList = document.getElementById("navList");
+
+        if (hamburger && navList) {
+          hamburger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            hamburger.querySelector("i").classList.toggle("fa-bars");
+            hamburger.querySelector("i").classList.toggle("fa-times"); // Change icon to 'X'
+          });
+
+          // Close nav when a link is clicked (for mobile)
+          navList.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth <= 992) {
+                // Only close on smaller screens
+                navList.classList.remove("active");
+                hamburger.querySelector("i").classList.remove("fa-times");
+                hamburger.querySelector("i").classList.add("fa-bars");
+              }
+            });
+          });
+        }
+
+        // --- Active Nav Link Highlighting ---
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".main-nav .nav-list a");
+
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href");
+          if (
+            linkPath === currentPath ||
+            (currentPath === "" && linkPath === "index.html")
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+
+        // --- Add subtle scroll animations (Example) ---
+        const sections = document.querySelectorAll("section");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.2, // Trigger when 20% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-in");
+              observer.unobserve(entry.target); // Stop observing once animated
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          section.classList.add("fade-in-section"); // Add base class for animation
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
